@@ -2650,7 +2650,7 @@ h2.permanent {
   color: var(--nl-white);
 }
 h2.opposite {
-  color: var(--t-opp-bright);
+  color: var(--t-opp-muted);
 }
 h2.accent {
   color: var(--pt-t-accent-bright);

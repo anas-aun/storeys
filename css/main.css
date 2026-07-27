@@ -119,7 +119,7 @@
   --base-tint-rgb--light: 249, 247, 247;
   --base-bright--light: #ffffff;
   --base-bright-rgb--light: 255, 255, 255;
-  --accent--light: #002bba;
+  --accent--light: #45a3d4; 
   --highlight--light: #819ffe;
   --base-opp--light: #0f0f0f;
   --base-opp-rgb--light: 15, 15, 15;
@@ -209,7 +209,9 @@
     --t-medium: var(--t-medium--light);
     --t-muted: var(--t-muted--light);
     --t-muted-extra: var(--t-muted-extra--light);
-    --t-opp-bright: var(--t-opp-bright--light);
+    /* --t-opp-bright: var(--t-opp-bright--light); temp */
+    --t-opp-bright: var(--t-opp-muted--light);
+
     --t-opp-medium: var(--t-opp-medium--light);
     --t-opp-muted: var(--t-opp-muted--light);
     --t-opp-muted-extra: var(--t-opp-muted-extra--light);
@@ -2650,7 +2652,7 @@ h2.permanent {
   color: var(--nl-white);
 }
 h2.opposite {
-  color: var(--t-opp-bright);
+  color: var(--t-opp-muted);
 }
 h2.accent {
   color: var(--pt-t-accent-bright);
@@ -8026,7 +8028,7 @@ form textarea:required:valid {
 .mxd-hero-01__bottom {
   position: relative;
   z-index: 1;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
   padding-bottom: 6.2rem;
 }
 @media only screen and (min-width: 768px) {
@@ -13663,7 +13665,8 @@ form textarea:required:valid {
   gap: 25svh;
   width: 100%;
   overflow: hidden;
-  background-color: var(--base);
+  /* background-color: var(--base); */
+  background: linear-gradient(45deg, #0f445b, #45a3d4) !important; 
 }
 .mxd-stack-cards.opposite {
   background-color: var(--base-opp);
