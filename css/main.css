@@ -8779,7 +8779,7 @@ form textarea:required:valid {
 }
 
 .mxd-hero-01__wrap {
-  position: relative;
+  position: absolute;
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
