@@ -96,6 +96,25 @@
       }
     }
 
+    /* Partner Marquee - desktop background */
+    @media (min-width: 992px) {
+      .marquee-partner-section {
+        background-color: #0f0f0f;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .marquee-partner-section .marquee__item img {
+        filter: brightness(0) invert(1);
+        opacity: 0.6;
+        transition: opacity 0.3s ease;
+      }
+
+      .marquee-partner-section .marquee__item:hover img {
+        opacity: 1;
+      }
+    }
+
     /* Additional Hero Section Responsive Fixes */
     @media (max-width: 767px) {
       .mxd-hero-01__data-wrap {
@@ -139,6 +158,136 @@
     .pinned-section__inner {
       width: 100%;
       height: 100%;
+    }
+
+    /* ---- Team Cards ---- */
+    .storeys-team-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .storeys-team-card__image {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 4px;
+      margin-bottom: 2rem;
+    }
+
+    .storeys-team-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.6s cubic-bezier(0.23, 0.65, 0.74, 1.09);
+    }
+
+    .storeys-team-card:hover .storeys-team-card__image img {
+      transform: scale(1.04);
+    }
+
+    .storeys-team-card__info h3 {
+      font-size: clamp(1.8rem, 2vw, 2.2rem);
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+      color: var(--t-bright, #121212);
+    }
+
+    .storeys-team-card__role {
+      font-size: 1.2rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--t-muted, #7d7f89);
+      margin-bottom: 1.2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--t-muted-extra, #dbd8d8);
+    }
+
+    .storeys-team-card__spec {
+      font-size: 1.2rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #45a3d4;
+    }
+
+    /* ---- CTA Form Fields ---- */
+    .storeys-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .storeys-field label {
+      font-size: 1.2rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      font-family: var(--_font-accent);
+    }
+
+    .storeys-field input,
+    .storeys-field select,
+    .storeys-field textarea {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+      color: #fff;
+      font-size: 1.5rem;
+      padding: 1.3rem 1.6rem;
+      outline: none;
+      transition: border-color 0.25s ease;
+      font-family: var(--_font-default);
+      width: 100%;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .storeys-field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.4)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1.6rem center;
+      padding-right: 4rem;
+      cursor: pointer;
+    }
+
+    .storeys-field select option {
+      background-color: #1a1a1a;
+      color: #fff;
+    }
+
+    .storeys-field input::placeholder,
+    .storeys-field textarea::placeholder {
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    .storeys-field input:focus,
+    .storeys-field select:focus,
+    .storeys-field textarea:focus {
+      border-color: #45a3d4;
+      background: rgba(69, 163, 212, 0.06);
+    }
+
+    .storeys-field textarea {
+      resize: vertical;
+      min-height: 12rem;
+    }
+
+    @media (max-width: 767px) {
+
+      .storeys-field input,
+      .storeys-field select,
+      .storeys-field textarea {
+        font-size: 1.6rem;
+        /* prevent iOS zoom */
+      }
+    }
+
+    @media (max-width: 640px) {
+
+      .storeys-field+.storeys-field,
+      [style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+      }
     }
   </style>
   <!-- Custom Color Overrides End -->
@@ -431,16 +580,14 @@
                           class="">Behance</span></a>
                     </li>
                     <li>
-                      <a class="tag tag-m" href="https://github.com/" target="_blank"><span
-                          class="">Github</span></a>
+                      <a class="tag tag-m" href="https://github.com/" target="_blank"><span class="">Github</span></a>
                     </li>
                     <li>
-                      <a class="tag tag-m" href="https://www.figma.com/community" target="_blank"><span
-                          class="">Figma Community</span></a>
+                      <a class="tag tag-m" href="https://www.figma.com/community" target="_blank"><span class="">Figma
+                          Community</span></a>
                     </li>
                     <li>
-                      <a class="tag tag-m" href="https://codepen.io/" target="_blank"><span
-                          class="">Codepen</span></a>
+                      <a class="tag tag-m" href="https://codepen.io/" target="_blank"><span class="">Codepen</span></a>
                     </li>
                   </ul>
                 </div>
@@ -522,49 +669,8 @@
             <!-- top group -->
             <div class="mxd-hero-01__top">
               <div class="mxd-hero-01__data-wrap">
-                <div class="mxd-hero-01__data-tags">
-                  <div class="tags-column">
-                    <ul>
-                      <li class=""><span class="tag tag-s-mobile tag-permanent ">Sales</span>
-                      </li>
-                      <li class=""><span class="tag tag-s-mobile tag-permanent ">Leasing</span>
-                      </li>
-                      <li class=""><span class="tag tag-s-mobile tag-permanent ">Off-Plan</span>
-                      </li>
-                      <li class=""><span class="tag tag-s-mobile tag-permanent ">Villas</span>
-                      </li>
-                      <li class=""><span class="tag tag-s-mobile tag-permanent ">Apartments</span></li>
-                    </ul>
-                  </div>
-                  <div class="tags-column">
-                    <ul>
-                      <li class=""><span class="tag tag-s-mobile tag-permanent ">Penthouses</span></li>
-                      <li class=""><span class="tag tag-s-mobile tag-permanent ">Downtown</span>
-                      </li>
-                      <li class=""><span class="tag tag-s-mobile tag-permanent ">Palm
-                          Jumeirah</span></li>
-                      <li class=""><span class="tag tag-s-mobile tag-permanent ">Dubai
-                          Marina</span></li>
-                      <li class=""><span class="tag tag-s-mobile tag-permanent ">Business
-                          Bay</span></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="mxd-hero-01__data-contact">
-                  <ul>
-                    <li class="">
-                      <a class="tag tag-s-mobile " href="tel:+971567897077">+971 56 789 7077</a>
-                    </li>
-                    <li class="">
-                      <a class="tag tag-s-mobile " href="https://www.instagram.com/"
-                        target="_blank">@storeys_uae</a>
-                    </li>
-                    <li class="">
-                      <a class="tag tag-s-mobile "
-                        href="mailto:hello@storeys.com?subject=Message%20from%20your%20site">hello@storeys.com</a>
-                    </li>
-                  </ul>
-                </div>
+
+
               </div>
 
             </div>
@@ -577,6 +683,10 @@
                       href="properties.html">
                       <span class="loading-chars excellence-gradient">Excellence</span>
                     </a>
+                    <p
+                      style="color: rgba(255, 255, 255, 0.75); font-size: clamp(2rem, 3vw, 4rem); line-height: 1.2; max-width: 60%; margin-bottom: 2rem;">
+                      Dubai's most trusted real estate brokerage connecting you to premium properties across the city's
+                      finest neighbourhoods.</p>
                   </div>
                 </div>
               </div>
@@ -590,7 +700,7 @@
     <!-- Hero Section End -->
 
     <!-- Section - Partner Marquee Start -->
-    <div class="mxd-section p-0">
+    <div class="mxd-section p-0 marquee-partner-section">
       <div class="mxd-container fullwidth-container">
         <div class="mxd-block">
           <div class="marquee marquee-left--gsap" style="padding: 3rem 0;">
@@ -682,89 +792,23 @@
                   <div class="marquee__top">
                     <!-- single item -->
                     <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">Design/</p>
+                      <p class="marquee__text text-with-gliph">Sales/</p>
                     </div>
                     <!-- single item -->
                     <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">Development/</p>
+                      <p class="marquee__text text-with-gliph">Leasing/</p>
                     </div>
                     <!-- single item -->
                     <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">Branding/</p>
+                      <p class="marquee__text text-with-gliph">Off-Plan/</p>
                     </div>
                     <!-- single item -->
                     <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">eCommerce/</p>
+                      <p class="marquee__text text-with-gliph">Luxury/</p>
                     </div>
                     <!-- single item -->
                     <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">Marketing/</p>
-                    </div>
-                  </div>
-                  <div class="marquee__bottom">
-                    <!-- single item -->
-                    <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">Design/</p>
-                    </div>
-                    <!-- single item -->
-                    <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">Development/</p>
-                    </div>
-                    <!-- single item -->
-                    <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">Branding/</p>
-                    </div>
-                    <!-- single item -->
-                    <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">eCommerce/</p>
-                    </div>
-                    <!-- single item -->
-                    <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">Marketing/</p>
-                    </div>
-                  </div>
-                  <div class="marquee__top">
-                    <!-- single item -->
-                    <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">Design/</p>
-                    </div>
-                    <!-- single item -->
-                    <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">Development/</p>
-                    </div>
-                    <!-- single item -->
-                    <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">Branding/</p>
-                    </div>
-                    <!-- single item -->
-                    <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">eCommerce/</p>
-                    </div>
-                    <!-- single item -->
-                    <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">Marketing/</p>
-                    </div>
-                  </div>
-                  <div class="marquee__bottom">
-                    <!-- single item -->
-                    <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">Design/</p>
-                    </div>
-                    <!-- single item -->
-                    <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">Development/</p>
-                    </div>
-                    <!-- single item -->
-                    <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">Branding/</p>
-                    </div>
-                    <!-- single item -->
-                    <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">eCommerce/</p>
-                    </div>
-                    <!-- single item -->
-                    <div class="marquee__item item-regular text">
-                      <p class="marquee__text text-with-gliph">Marketing/</p>
+                      <p class="marquee__text text-with-gliph">Investment/</p>
                     </div>
                   </div>
                 </div>
@@ -1220,38 +1264,95 @@
     </div>
     <!-- Section - Manifest & Split Description Pinned End -->
 
-    <!-- Section - Parallax Divider Image & Title Start -->
-    <div class="mxd-section blur-section">
-      <div class="mxd-container fullwidth-container">
-        <div class="mxd-divider">
-          <!-- image -->
-          <div class="mxd-divider__image divider-image-1 parallax-img">
-            <img class="parallax-img" src="img/new/team.jpg" alt="">
-          </div>
-          <!-- cover layer -->
-          <div class="mxd-divider__cover cover-04"></div>
-          <!-- content -->
-          <div class="mxd-divider__content">
-            <div class="mxd-divider__btngroup anim-uni-in-up">
-              <a class="btn btn-default-icon btn-default-permanent" href="team.html">
+    <!-- Section - Team Cards Start -->
+    <div class="mxd-section blur-section" style="padding-top: 8rem; padding-bottom: 8rem;">
+      <div class="mxd-container grid-s-container">
 
-                <span class="btn-caption ">Book a Valuation</span>
-                <i class="btn-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-                    <path d="M9,0L7.2,1.8l6.3,6.3H0v2.7h13.5l-6.3,6.3L9,18l9-9L9,0z" />
-                  </svg>
-                </i></a>
-            </div>
-            <div class="mxd-divider__caption">
-              <a class="active-cursor-accent" data-cursor-text="Our Team" href="team.html">
-                <h2 class="permanent mxd-split-lines">Meet our professional team</h2>
-              </a>
+        <!-- Section Header -->
+        <div class="mxd-block" style="text-align: center; margin-bottom: 5rem;">
+          <h2 class="mxd-split-lines" style="font-size: clamp(3rem, 5vw, 6rem); margin-bottom: 1.8rem;">The people
+            behind the numbers</h2>
+          <p
+            style="max-width: 52rem; margin: 0 auto; font-size: clamp(1.4rem, 1.6vw, 1.6rem); line-height: 1.75; color: var(--t-medium, #575960);">
+            A dedicated team of specialists matched to your goals — from first enquiry to final handover, and long
+            after.
+          </p>
+        </div>
+
+        <!-- Team Cards Grid -->
+        <div class="mxd-block">
+          <div class="container-fluid p-0">
+            <div class="row g-0"
+              style="gap: 0; column-gap: 3rem; row-gap: 5rem; display: flex; flex-wrap: wrap; justify-content: center;">
+
+              <!-- Card 1 -->
+              <div style="flex: 1 1 28rem; max-width: 36rem;">
+                <div class="storeys-team-card">
+                  <div class="storeys-team-card__image">
+                    <img
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&h=1000&q=80"
+                      alt="Omar Haddad - Senior Property Advisor">
+                  </div>
+                  <div class="storeys-team-card__info">
+                    <h3>Omar Haddad</h3>
+                    <p class="storeys-team-card__role">Senior Property Advisor</p>
+                    <p class="storeys-team-card__spec">Off-Plan &amp; Investment</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div style="flex: 1 1 28rem; max-width: 36rem;">
+                <div class="storeys-team-card">
+                  <div class="storeys-team-card__image">
+                    <img
+                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&h=1000&q=80"
+                      alt="Layla Hassan - Client Director">
+                  </div>
+                  <div class="storeys-team-card__info">
+                    <h3>Layla Hassan</h3>
+                    <p class="storeys-team-card__role">Client Director</p>
+                    <p class="storeys-team-card__spec">Private &amp; Family Clients</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div style="flex: 1 1 28rem; max-width: 36rem;">
+                <div class="storeys-team-card">
+                  <div class="storeys-team-card__image">
+                    <img
+                      src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80"
+                      alt="Karim Nasser - Leasing & Management">
+                  </div>
+                  <div class="storeys-team-card__info">
+                    <h3>Karim Nasser</h3>
+                    <p class="storeys-team-card__role">Leasing &amp; Management</p>
+                    <p class="storeys-team-card__spec">Residential &amp; Commercial</p>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
+
+        <!-- CTA -->
+        <div class="mxd-block" style="text-align: center; margin-top: 5rem;">
+          <a class="btn btn-default-icon btn-default-outline anim-uni-in-up" href="team.html">
+
+            <span class="btn-caption ">Meet the Full Team</span>
+            <i class="btn-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+                <path d="M9,0L7.2,1.8l6.3,6.3H0v2.7h13.5l-6.3,6.3L9,18l9-9L9,0z" />
+              </svg>
+            </i>
+          </a>
+        </div>
+
       </div>
     </div>
-    <!-- Section - Parallax Divider Image & Title End -->
+    <!-- Section - Team Cards End -->
 
     <!-- Section - Blog Preview Start -->
     <div class="mxd-section blur-section pinned-section padding-top-title padding-bottom-preview">
@@ -1691,6 +1792,128 @@
       </div>
     </div>
     <!-- Section - Instagram Feed End -->
+
+    <!-- Section - CTA Contact Form Start -->
+    <div class="mxd-section " style="padding-top: 8rem; padding-bottom: 8rem; background-color: #0f0f0f;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);">
+      <div class="mxd-container grid-s-container">
+        <div class="container-fluid p-0">
+          <div class="row g-0" style="gap: 6rem; align-items: center;">
+
+            <!-- Left: Copy -->
+            <div class="col-12 col-lg-5">
+              <p class="anim-uni-in-up"
+                style="font-size: 1.3rem; letter-spacing: 0.12em; text-transform: uppercase; color: #45a3d4; margin-bottom: 2rem; font-family: var(--_font-accent);">
+                Get in Touch</p>
+              <h2 class="mxd-split-lines permanent"
+                style="font-size: clamp(3rem, 4.5vw, 5.5rem); line-height: 1.1; margin-bottom: 2.4rem;">Find your
+                perfect<br>property today</h2>
+              <p
+                style="font-size: clamp(1.4rem, 1.5vw, 1.6rem); line-height: 1.75; color: rgba(255,255,255,0.55); max-width: 42rem; margin-bottom: 3.5rem;">
+                Whether you're buying, leasing or investing — our advisors are ready to guide you. Leave your details
+                and we'll be in touch within 24 hours.
+              </p>
+              <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.4rem;">
+                <li
+                  style="display: flex; align-items: center; gap: 1.2rem; color: rgba(255,255,255,0.6); font-size: 1.4rem;">
+                  <span
+                    style="width: 3.6rem; height: 3.6rem; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 18 18" fill="#45a3d4">
+                      <path
+                        d="M9 0C5.69 0 3 2.69 3 6c0 4.5 6 12 6 12s6-7.5 6-12c0-3.31-2.69-6-6-6zm0 8.5A2.5 2.5 0 1 1 9 3.5a2.5 2.5 0 0 1 0 5z" />
+                    </svg>
+                  </span>
+                  Dubai, UAE — Serving all Emirates
+                </li>
+                <li
+                  style="display: flex; align-items: center; gap: 1.2rem; color: rgba(255,255,255,0.6); font-size: 1.4rem;">
+                  <span
+                    style="width: 3.6rem; height: 3.6rem; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 18 18" fill="#45a3d4">
+                      <path
+                        d="M3.6 0C1.6 0 0 1.6 0 3.6v10.8C0 16.4 1.6 18 3.6 18h10.8c2 0 3.6-1.6 3.6-3.6V3.6C18 1.6 16.4 0 14.4 0H3.6zm1.2 4.5h8.4L9 10 4.8 4.5zM3 6.2l5.4 6.3c.3.4 1 .4 1.3 0L15 6.2v7.2c0 .3-.3.6-.6.6H3.6c-.3 0-.6-.3-.6-.6V6.2z" />
+                    </svg>
+                  </span>
+                  hello@storeys.com
+                </li>
+                <li
+                  style="display: flex; align-items: center; gap: 1.2rem; color: rgba(255,255,255,0.6); font-size: 1.4rem;">
+                  <span
+                    style="width: 3.6rem; height: 3.6rem; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 18 18" fill="#45a3d4">
+                      <path
+                        d="M3.6 0a1.8 1.8 0 0 0-1.8 1.8v1.8C1.8 11.8 6.2 16.2 14.4 16.2h1.8a1.8 1.8 0 0 0 1.8-1.8v-2.7a1.8 1.8 0 0 0-1.8-1.8h-2.7a1.8 1.8 0 0 0-1.8 1.8v.5C9.9 12 6 8.1 6 6.3h.5a1.8 1.8 0 0 0 1.8-1.8V1.8A1.8 1.8 0 0 0 6.5 0H3.6z" />
+                    </svg>
+                  </span>
+                  +971 56 789 7077
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right: Form -->
+            <div class="col-12 col-lg-6" style="flex: 1;">
+              <form action="mail.php" method="POST" style="display: flex; flex-direction: column; gap: 2rem;">
+
+                <!-- Name + Phone row -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                  <div class="storeys-field">
+                    <label>Full Name</label>
+                    <input type="text" name="name" placeholder="Omar Haddad" required>
+                  </div>
+                  <div class="storeys-field">
+                    <label>Phone</label>
+                    <input type="tel" name="phone" placeholder="+971 50 000 0000">
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div class="storeys-field">
+                  <label>Email Address</label>
+                  <input type="email" name="email" placeholder="you@example.com" required>
+                </div>
+
+                <!-- Interest -->
+                <div class="storeys-field">
+                  <label>I'm interested in</label>
+                  <select name="interest">
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="buy">Buying a Property</option>
+                    <option value="rent">Renting / Leasing</option>
+                    <option value="offplan">Off-Plan Investment</option>
+                    <option value="sell">Selling My Property</option>
+                    <option value="valuation">Free Valuation</option>
+                    <option value="management">Property Management</option>
+                  </select>
+                </div>
+
+                <!-- Message -->
+                <div class="storeys-field">
+                  <label>Message</label>
+                  <textarea name="message" rows="4" placeholder="Tell us what you're looking for..."></textarea>
+                </div>
+
+                <!-- Submit -->
+                <div style="margin-top: 0.5rem;">
+                  <button type="submit" class="btn btn-default-icon btn-default-accent"
+                    style="width: 100%; justify-content: center; padding: 1.6rem 2.4rem;">
+                    <i class="btn-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+                        <path d="M9,0L7.2,1.8l6.3,6.3H0v2.7h13.5l-6.3,6.3L9,18l9-9L9,0z" />
+                      </svg>
+                    </i>
+                    <span class="btn-caption">Send Enquiry</span>
+                  </button>
+                </div>
+
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Section - CTA Contact Form End -->
 
   </main>
   <!-- Page Content End -->
