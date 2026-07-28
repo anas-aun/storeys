@@ -255,53 +255,66 @@
       }
     }
 
-    /* ---- Team Cards ---- */
     .storeys-team-card {
-      display: flex;
-      flex-direction: column;
+      position: relative;
+      border-radius: 1.2rem;
+      overflow: hidden;
+      background: #16161a;
     }
 
     .storeys-team-card__image {
+      position: relative;
+      width: 100%;
       aspect-ratio: 4 / 5;
       overflow: hidden;
-      border-radius: 4px;
-      margin-bottom: 2rem;
     }
 
-    .storeys-team-card__image img {
+    .storeys-team-card__image img,
+    .storeys-team-card__video-frame {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: top center;
-      transition: transform 0.6s cubic-bezier(0.23, 0.65, 0.74, 1.09);
+      border: 0;
     }
 
-    .storeys-team-card:hover .storeys-team-card__image img {
-      transform: scale(1.04);
+    .storeys-team-card__image img {
+      transition: opacity 0.35s ease;
+      z-index: 1;
+    }
+
+    .storeys-team-card__video-frame {
+      z-index: 0;
+      pointer-events: none;
+      /* keep hover control on the card, not the iframe */
+    }
+
+    /* When the card is "active" (hovered / video playing), fade the photo out */
+    .storeys-team-card.is-playing .storeys-team-card__image img {
+      opacity: 0;
+    }
+
+    .storeys-team-card__info {
+      padding: 1.6rem 1.8rem 2rem;
     }
 
     .storeys-team-card__info h3 {
-      font-size: clamp(1.8rem, 2vw, 2.2rem);
-      font-weight: 500;
-      margin-bottom: 0.6rem;
-      color: var(--t-bright, #121212);
+      margin: 0 0 0.3rem;
+      font-size: 1.6rem;
     }
 
     .storeys-team-card__role {
-      font-size: 1.2rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--t-muted, #7d7f89);
-      margin-bottom: 1.2rem;
-      padding-bottom: 1.2rem;
-      border-bottom: 1px solid var(--t-muted-extra, #dbd8d8);
+      margin: 0;
+      font-size: 1.3rem;
+      color: #b9b9c0;
     }
 
     .storeys-team-card__spec {
+      margin: 0.2rem 0 0;
       font-size: 1.2rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #45a3d4;
+      color: #7d7d85;
     }
 
     /* ---- CTA Form Fields ---- */
@@ -1214,6 +1227,8 @@
     <!-- Section - Manifest & Split Description Pinned End -->
 
     <!-- Section - Team Cards Start -->
+
+    <!-- Section - Team Cards Start -->
     <div class="mxd-section blur-section" style="padding-top: 8rem; padding-bottom: 8rem;">
       <div class="mxd-container grid-s-container">
 
@@ -1234,25 +1249,10 @@
             <div class="row g-0"
               style="gap: 0; column-gap: 3rem; row-gap: 5rem; display: flex; flex-wrap: wrap; justify-content: center;">
 
-              <!-- Card 1 -->
-              <div style="flex: 1 1 28rem; max-width: 36rem;">
-                <div class="storeys-team-card">
-                  <div class="storeys-team-card__image">
-                    <img
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&h=1000&q=80"
-                      alt="Omar Haddad - Senior Property Advisor">
-                  </div>
-                  <div class="storeys-team-card__info">
-                    <h3>Omar Haddad</h3>
-                    <p class="storeys-team-card__role">Senior Property Advisor</p>
-                    <p class="storeys-team-card__spec">Off-Plan &amp; Investment</p>
-                  </div>
-                </div>
-              </div>
-
+           
               <!-- Card 2 -->
               <div style="flex: 1 1 28rem; max-width: 36rem;">
-                <div class="storeys-team-card">
+                <div class="storeys-team-card" data-video-id="smoQhqNm9Iw">
                   <div class="storeys-team-card__image">
                     <img
                       src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&h=1000&q=80"
@@ -1268,7 +1268,7 @@
 
               <!-- Card 3 -->
               <div style="flex: 1 1 28rem; max-width: 36rem;">
-                <div class="storeys-team-card">
+                <div class="storeys-team-card" data-video-id="5ugXVlPDSqw">
                   <div class="storeys-team-card__image">
                     <img
                       src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80"
@@ -1281,8 +1281,10 @@
                   </div>
                 </div>
               </div>
+
+              <!-- Card 4 -->
               <div style="flex: 1 1 28rem; max-width: 36rem;">
-                <div class="storeys-team-card">
+                <div class="storeys-team-card" data-video-id="M94IVoVhZ28">
                   <div class="storeys-team-card__image">
                     <img
                       src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80"
@@ -1295,8 +1297,10 @@
                   </div>
                 </div>
               </div>
+
+              <!-- Card 5 -->
               <div style="flex: 1 1 28rem; max-width: 36rem;">
-                <div class="storeys-team-card">
+                <div class="storeys-team-card" data-video-id="4jnzf1yj48M">
                   <div class="storeys-team-card__image">
                     <img
                       src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80"
@@ -1309,6 +1313,7 @@
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -1316,8 +1321,7 @@
         <!-- CTA -->
         <div class="mxd-block" style="text-align: center; margin-top: 5rem;">
           <a class="btn btn-default-icon btn-default-outline anim-uni-in-up" href="team.html">
-
-            <span class="btn-caption ">Meet the Full Team</span>
+            <span class="btn-caption">Meet the Full Team</span>
             <i class="btn-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
                 <path d="M9,0L7.2,1.8l6.3,6.3H0v2.7h13.5l-6.3,6.3L9,18l9-9L9,0z" />
@@ -1841,6 +1845,66 @@
   <script src="js/libs.min.js"></script>
   <script src="js/app.js"></script>
   <!-- Load Scripts End -->
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    // Video ID per card, by position. `null` means that card has no hover video
+    // and just keeps its static photo. The Shorts video was removed here —
+    // card 1 (Omar) now has no video.
+    const VIDEO_IDS = [
+      "smoQhqNm9Iw",   // Card 2 - Layla Hassan
+      "5ugXVlPDSqw",   // Card 3 - Karim Nasser
+      "M94IVoVhZ28",   // Card 4 - Karim Nasser
+      "4jnzf1yj48M"    // Card 5 - Karim Nasser
+    ];
+
+    function buildEmbedUrl(videoId) {
+      const params = new URLSearchParams({
+        autoplay: '1',
+        mute: '1',
+        controls: '0',
+        loop: '1',
+        playlist: videoId, // required for loop to work on a single video
+        modestbranding: '1',
+        rel: '0',
+        playsinline: '1'
+      });
+      return `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.storeys-team-card');
+
+      cards.forEach((card, index) => {
+        const videoId = VIDEO_IDS[index];
+        if (!videoId) return; // no video for this card, just show the photo
+
+        card.setAttribute('data-video-id', videoId);
+
+        const imageWrap = card.querySelector('.storeys-team-card__image');
+
+        // Create the iframe once, upfront, but leave its src empty until hovered
+        // so nothing loads or plays until the user actually interacts.
+        const iframe = document.createElement('iframe');
+        iframe.className = 'storeys-team-card__video-frame';
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        iframe.setAttribute('allowfullscreen', '');
+        imageWrap.appendChild(iframe);
+
+        card.addEventListener('mouseenter', () => {
+          card.classList.add('is-playing');
+          iframe.src = buildEmbedUrl(videoId);
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.classList.remove('is-playing');
+          iframe.src = ''; // clearing the src stops playback
+        });
+      });
+    });
+  </script>
 
 </body>
 
