@@ -6819,15 +6819,15 @@ form textarea:required:valid {
   -moz-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  margin-bottom: 2.8rem;
+  margin-bottom: 1.8rem;
 }
 
 .mxd-footer__controls-middle.caption-small {
-  margin-bottom: 2.6rem;
+  margin-bottom: 1.6rem;
 }
 
 .mxd-footer__controls-middle.controls-landing {
-  margin-top: 8.8rem;
+  margin-top: 2.8rem;
   -webkit-box-pack: start;
   -moz-box-pack: start;
   -ms-flex-pack: start;
@@ -6836,11 +6836,11 @@ form textarea:required:valid {
 
 @media only screen and (min-width: 768px) {
   .mxd-footer__controls-middle {
-    margin-bottom: 2.9rem;
+    margin-bottom: 1.9rem;
   }
 
   .mxd-footer__controls-middle.controls-landing {
-    margin-top: 16.4rem;
+    margin-top: 4.4rem;
   }
 }
 
@@ -6850,7 +6850,7 @@ form textarea:required:valid {
   }
 
   .mxd-footer__controls-middle.controls-landing {
-    margin-top: 17.3rem;
+    margin-top: 3.3rem;
   }
 }
 
@@ -6860,13 +6860,13 @@ form textarea:required:valid {
     -moz-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
-    margin-top: 16.8rem;
+    margin-top: 4.8rem;
   }
 }
 
 @media only screen and (min-width: 1600px) {
   .mxd-footer__controls-middle {
-    margin-top: 19.2rem;
+    margin-top: 3.2rem;
   }
 
   .mxd-footer__controls-middle.caption-small {
@@ -6874,7 +6874,7 @@ form textarea:required:valid {
   }
 
   .mxd-footer__controls-middle.controls-landing {
-    margin-top: 18.8rem;
+    margin-top: 3.8rem;
   }
 }
 
