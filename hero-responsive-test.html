@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Section Responsive Test</title>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="css/loader.css">
+  <link rel="stylesheet" type="text/css" href="css/plugins.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/hero-responsive.css">
+  
+  <style>
+    /* Test helper styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    .test-info {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 12px;
+      z-index: 9999;
+      font-family: monospace;
+    }
+    
+    .test-info span {
+      display: block;
+      margin: 3px 0;
+    }
+    
+    :root {
+      --color-base: #F5E8D1;
+    }
+
+    body,
+    .bg-color-base {
+      background-color: #F5E8D1 !important;
+    }
+
+    .mxd-hero-01__cover {
+      background: rgba(0, 0, 0, .35);
+    }
+
+    .excellence-gradient {
+      background: #45a3d4;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding-bottom: 5%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Size Indicator -->
+  <div class="test-info">
+    <span id="screen-width">Width: <span id="width-value"></span>px</span>
+    <span id="screen-height">Height: <span id="height-value"></span>px</span>
+    <span id="device-type">Device: <span id="device-value"></span></span>
+    <span id="orientation">Orientation: <span id="orientation-value"></span></span>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="mxd-section pinned-section mxd-hero-section no-padding mxd-hero-fullheight-desktop">
+    <div class="pinned-section__inner">
+      <div class="mxd-hero-01">
+
+        <div class="mxd-hero-01__cover"></div>
+        <video class="mxd-hero-01__video" autoplay muted loop playsinline preload="auto"
+          poster="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=360&h=225&q=80">
+          <source type="video/mp4" src="video/new/bg.mp4">
+        </video>
+        
+        <div class="mxd-hero-01__wrap">
+          <!-- top group -->
+          <div class="mxd-hero-01__top">
+            <div class="mxd-hero-01__data-wrap">
+              <div class="mxd-hero-01__data-tags">
+                <div class="tags-column">
+                  <ul>
+                    <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Location</span></li>
+                    <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Select Location</span></li>
+                    <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Bedrooms</span></li>
+                    <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Select Bedroom</span></li>
+                    <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Types</span></li>
+                  </ul>
+                </div>
+                <div class="tags-column">
+                  <ul>
+                    <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Select Type</span></li>
+                    <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Price Range</span></li>
+                    <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Min price</span></li>
+                    <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Max price</span></li>
+                    <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Search</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mxd-hero-01__data-contact">
+                <ul>
+                  <li class="loading-item">
+                    <a class="tag tag-s-mobile mxd-scramble" href="tel:+971567897077">+971 56 789 7077</a>
+                  </li>
+                  <li class="loading-item">
+                    <a class="tag tag-s-mobile mxd-scramble" href="https://www.instagram.com/" target="_blank">@storeys_uae</a>
+                  </li>
+                  <li class="loading-item">
+                    <a class="tag tag-s-mobile mxd-scramble" href="mailto:hello@storeys.com">hello@storeys.com</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- bottom group -->
+          <div class="mxd-hero-01__bottom">
+            <div class="mxd-hero-01__caption">
+              <div class="fullwidth-text">
+                <div class="fullwidth-text__wrap">
+                  <a class="fullwidth-text__content permanent active-cursor-accent" data-cursor-text="Explore" href="properties.html">
+                    <span class="loading-chars excellence-gradient">Excellence</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pinned-section__trigger"></div>
+  </div>
+
+  <!-- Test Script -->
+  <script>
+    function updateScreenInfo() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const orientation = width > height ? 'Landscape' : 'Portrait';
+      
+      let deviceType = '';
+      if (width < 481) {
+        deviceType = 'Small Mobile';
+      } else if (width < 768) {
+        deviceType = 'Mobile';
+      } else if (width < 992) {
+        deviceType = 'Tablet Portrait';
+      } else if (width < 1200) {
+        deviceType = 'Tablet Landscape';
+      } else if (width < 1600) {
+        deviceType = 'Desktop';
+      } else if (width < 1920) {
+        deviceType = 'Large Desktop';
+      } else {
+        deviceType = 'Extra Large Desktop';
+      }
+      
+      document.getElementById('width-value').textContent = width;
+      document.getElementById('height-value').textContent = height;
+      document.getElementById('device-value').textContent = deviceType;
+      document.getElementById('orientation-value').textContent = orientation;
+    }
+    
+    // Update on load and resize
+    updateScreenInfo();
+    window.addEventListener('resize', updateScreenInfo);
+    window.addEventListener('orientationchange', updateScreenInfo);
+    
+    // Log responsive breakpoints
+    console.log('Hero Section Responsive Test');
+    console.log('Current viewport:', window.innerWidth + 'x' + window.innerHeight);
+    console.log('Test different screen sizes using DevTools device toolbar');
+  </script>
+
+</body>
+</html>

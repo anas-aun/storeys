@@ -1,0 +1,390 @@
+/* ================================================
+   Hero Section Responsive Styles
+   ================================================ */
+
+/* Base Mobile Styles (320px - 767px) */
+/* ================================================ */
+
+/* Hero Section Container */
+.mxd-hero-section {
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
+}
+
+.mxd-hero-01 {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+}
+
+/* Hero Video - Mobile */
+.mxd-hero-01__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Hero Wrap - Mobile */
+.mxd-hero-01__wrap {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
+  z-index: 1;
+}
+
+/* Top Section - Mobile */
+.mxd-hero-01__top {
+  padding-top: 8rem;
+  margin-bottom: 3rem;
+}
+
+/* Data Tags - Mobile */
+.mxd-hero-01__data-tags {
+  display: none; /* Hidden on mobile */
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  max-width: 100%;
+}
+
+.mxd-hero-01__data-tags .tags-column {
+  width: 100%;
+}
+
+.mxd-hero-01__data-tags .tags-column ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+.mxd-hero-01__data-tags .tags-column ul li {
+  width: 100%;
+}
+
+.mxd-hero-01__data-tags .tag {
+  font-size: 1.2rem;
+  padding: 0.8rem 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Data Contact - Mobile */
+.mxd-hero-01__data-contact {
+  margin-top: 2rem;
+}
+
+.mxd-hero-01__data-contact ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.mxd-hero-01__data-contact .tag {
+  font-size: 1.2rem;
+  padding: 0.8rem 1.2rem;
+}
+
+/* Bottom Section - Mobile */
+.mxd-hero-01__bottom {
+  padding-bottom: 3rem;
+}
+
+/* Full Width Text (Excellence) - Mobile */
+.fullwidth-text__content {
+  font-size: clamp(3rem, 12vw, 6rem) !important;
+  line-height: 0.85;
+  text-align: center;
+}
+
+.fullwidth-text__content span {
+  font-size: inherit;
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* Small Mobile (320px - 480px) */
+/* ================================================ */
+@media only screen and (max-width: 480px) {
+  .mxd-hero-01__wrap {
+    padding: 1.5rem 1rem;
+  }
+
+  .mxd-hero-01__top {
+    padding-top: 6rem;
+    margin-bottom: 2rem;
+  }
+
+  .mxd-hero-01__data-tags .tag,
+  .mxd-hero-01__data-contact .tag {
+    font-size: 1.1rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .fullwidth-text__content {
+    font-size: clamp(2.5rem, 10vw, 5rem) !important;
+  }
+
+  .mxd-hero-01__bottom {
+    padding-bottom: 2rem;
+  }
+}
+
+/* Tablet Portrait (768px - 991px) */
+/* ================================================ */
+@media only screen and (min-width: 768px) {
+  .mxd-hero-01 {
+    height: 100vh;
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+  }
+
+  .mxd-hero-01__wrap {
+    padding: 3rem 4rem;
+  }
+
+  .mxd-hero-01__top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 10rem;
+    margin-bottom: 0;
+    gap: 3rem;
+  }
+
+  .mxd-hero-01__data-wrap {
+    flex-direction: row;
+    gap: 4rem;
+    margin-bottom: 0;
+  }
+
+  .mxd-hero-01__data-tags {
+    display: flex; /* Show on tablet and above */
+    flex-direction: row;
+    gap: 2rem;
+    margin-bottom: 0;
+    max-width: 450px;
+  }
+
+  .mxd-hero-01__data-tags .tags-column {
+    flex: 1;
+  }
+
+  .mxd-hero-01__data-tags .tags-column ul {
+    gap: 0.6rem;
+  }
+
+  .mxd-hero-01__data-tags .tag,
+  .mxd-hero-01__data-contact .tag {
+    font-size: 1.3rem;
+    padding: 0.9rem 1.4rem;
+  }
+
+  .mxd-hero-01__data-contact {
+    margin-top: 0;
+  }
+
+  .mxd-hero-01__data-contact ul {
+    gap: 0.6rem;
+  }
+
+  .fullwidth-text__content {
+    font-size: clamp(6rem, 12vw, 12rem) !important;
+    text-align: left;
+  }
+
+  .mxd-hero-01__bottom {
+    padding-bottom: 4rem;
+  }
+}
+
+/* Tablet Landscape / Small Desktop (992px - 1199px) */
+/* ================================================ */
+@media only screen and (min-width: 992px) {
+  .mxd-hero-01__wrap {
+    padding: 4rem 5rem;
+  }
+
+  .mxd-hero-01__top {
+    gap: 4rem;
+  }
+
+  .mxd-hero-01__data-wrap {
+    gap: 5rem;
+  }
+
+  .mxd-hero-01__data-tags {
+    gap: 3rem;
+    max-width: 500px;
+  }
+
+  .fullwidth-text__content {
+    font-size: clamp(8rem, 14vw, 16rem) !important;
+  }
+}
+
+/* Desktop (1200px - 1599px) */
+/* ================================================ */
+@media only screen and (min-width: 1200px) {
+  .mxd-hero-01 {
+    height: 100vh;
+    min-height: 667px;
+    padding-top: 0;
+  }
+
+  .mxd-hero-01__wrap {
+    padding: 0 6rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    max-width: 1920px;
+  }
+
+  .mxd-hero-01__top {
+    padding-top: 13.6rem;
+    padding-bottom: 5.3rem;
+    gap: 6rem;
+  }
+
+  .mxd-hero-01__data-wrap {
+    gap: 6rem;
+  }
+
+  .mxd-hero-01__data-tags {
+    max-width: 600px;
+    gap: 4rem;
+  }
+
+  .mxd-hero-01__data-tags .tag,
+  .mxd-hero-01__data-contact .tag {
+    font-size: 1.4rem;
+    padding: 1rem 1.6rem;
+  }
+
+  .fullwidth-text__content {
+    font-size: clamp(6rem, 8vw, 16rem) !important;
+  }
+
+  .mxd-hero-01__bottom {
+    padding-bottom: 6.2rem;
+  }
+}
+
+/* Large Desktop (1600px+) */
+/* ================================================ */
+@media only screen and (min-width: 1600px) {
+  .mxd-hero-01__wrap {
+    padding: 0 10rem;
+  }
+
+  .mxd-hero-01__data-tags {
+    max-width: 700px;
+    gap: 6rem;
+  }
+
+  .mxd-hero-01__data-tags .tag,
+  .mxd-hero-01__data-contact .tag {
+    font-size: 1.5rem;
+    padding: 1.1rem 1.8rem;
+  }
+
+  .fullwidth-text__content {
+    font-size: clamp(6rem, 12vw, 18rem) !important;
+  }
+}
+
+/* Extra Large Desktop (1920px+) */
+/* ================================================ */
+@media only screen and (min-width: 1920px) {
+  .mxd-hero-01__wrap {
+    padding: 0 12rem;
+  }
+
+  .fullwidth-text__content {
+    font-size: clamp(10rem, 14vw, 22rem) !important;
+  }
+}
+
+/* Landscape Mobile Devices */
+/* ================================================ */
+@media only screen and (max-height: 500px) and (orientation: landscape) {
+  .mxd-hero-01 {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+
+  .mxd-hero-01__top {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+  }
+
+  .mxd-hero-01__bottom {
+    padding-bottom: 2rem;
+  }
+
+  .fullwidth-text__content {
+    font-size: clamp(3rem, 8vw, 8rem) !important;
+  }
+}
+
+/* Touch Device Optimizations */
+/* ================================================ */
+@media (hover: none) and (pointer: coarse) {
+  .mxd-hero-01__data-tags .tag,
+  .mxd-hero-01__data-contact .tag,
+  .mxd-hero-01__data-contact a {
+    min-height: 44px; /* Touch target size */
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* High DPI Screens */
+/* ================================================ */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi) {
+  .mxd-hero-01__video {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Reduced Motion Accessibility */
+/* ================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .mxd-hero-01__video {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .fullwidth-text__content .char {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Print Styles */
+/* ================================================ */
+@media print {
+  .mxd-hero-01__video {
+    display: none;
+  }
+
+  .mxd-hero-section {
+    height: auto !important;
+    page-break-inside: avoid;
+  }
+}

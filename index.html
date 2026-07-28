@@ -38,6 +38,7 @@
   <link rel="stylesheet" type="text/css" href="css/loader.css">
   <link rel="stylesheet" type="text/css" href="css/plugins.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/hero-responsive.css">
   <!--  Styles End -->
 
   <!-- Custom Color Overrides Start -->
@@ -68,6 +69,75 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       padding-bottom: 5%;
+    }
+
+    .menu-logo {
+      width: auto;
+      height: 50px;
+      max-width: 100%;
+      display: block;
+    }
+
+    @media (max-width: 992px) {
+      .menu-logo {
+        height: 44px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-logo {
+        height: 38px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .menu-logo {
+        height: 32px;
+      }
+    }
+
+    /* Additional Hero Section Responsive Fixes */
+    @media (max-width: 767px) {
+      .mxd-hero-01__data-wrap {
+        flex-direction: column !important;
+      }
+
+      .mxd-hero-01__data-tags {
+        display: none !important; /* Hide tags on mobile */
+      }
+
+      .tags-column {
+        width: 100% !important;
+      }
+
+      .fullwidth-text__wrap {
+        padding: 0 !important;
+      }
+
+      .mxd-hero-01__caption {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    /* Improve mobile video performance */
+    @media (max-width: 767px) {
+      .mxd-hero-01__video {
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+      }
+    }
+
+    /* Ensure proper aspect ratio on all devices */
+    .pinned-section {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .pinned-section__inner {
+      width: 100%;
+      height: 100%;
     }
   </style>
   <!-- Custom Color Overrides End -->
@@ -138,7 +208,7 @@
         <!-- Menu Logo Start -->
         <div class="mxd-menu__logo">
           <a class="mxd-logo" href="index-branding-studio.html">
-            <img src="img/new/logos.png" alt="logo" style="width: auto;height: 50px;" />
+            <img src="img/new/logos.png" alt="Storeys Logo" class="menu-logo">
           </a>
         </div>
         <!-- Menu Logo End -->
@@ -412,9 +482,9 @@
   <!-- Header Start -->
   <header id="header" class="mxd-header mxd-header-permanent">
     <!-- header logo -->
-    <div class="mxd-header__logo loading-fade">
+    <div class="mxd-menu__logo">
       <a class="mxd-logo" href="index-branding-studio.html">
-        <img src="img/new/logos.png" alt="logo" style="width: auto;height: 50px;" />
+        <img src="img/new/logos.png" alt="Storeys Logo" class="menu-logo">
       </a>
     </div>
 
@@ -454,30 +524,20 @@
                 <div class="mxd-hero-01__data-tags">
                   <div class="tags-column">
                     <ul>
-                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Location</span>
-                      </li>
-                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Select
-                          Location</span></li>
-                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Bedrooms</span>
-                      </li>
-                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Select
-                          Bedroom</span></li>
-                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Types</span>
-                      </li>
+                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Dubai</span></li>
+                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Off-Plan</span></li>
+                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Ready to Move</span></li>
+                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Luxury Villas</span></li>
+                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Apartments</span></li>
                     </ul>
                   </div>
                   <div class="tags-column">
                     <ul>
-                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Select
-                          Type</span></li>
-                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Price
-                          Range</span></li>
-                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Min
-                          price</span></li>
-                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Max
-                          price</span></li>
-                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Search</span>
-                      </li>
+                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Penthouses</span></li>
+                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Downtown Dubai</span></li>
+                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Palm Jumeirah</span></li>
+                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Dubai Marina</span></li>
+                      <li class="loading-item"><span class="tag tag-s-mobile tag-permanent mxd-scramble">Business Bay</span></li>
                     </ul>
                   </div>
                 </div>
@@ -492,7 +552,7 @@
                     </li>
                     <li class="loading-item">
                       <a class="tag tag-s-mobile mxd-scramble"
-                        href="mailto:example@example.com?subject=Message%20from%20your%20site">hello@storeys.com</a>
+                        href="mailto:hello@storeys.com?subject=Message%20from%20your%20site">hello@storeys.com</a>
                     </li>
                   </ul>
                 </div>
@@ -1077,7 +1137,7 @@
                   <div class="col-12 col-lg-6 mxd-grid-item">
                     <div class="mxd-split-descr__image">
                       <img
-                        src="https://images.unsplash.com/photo-1613490908689-53e34b8c9c71?auto=format&fit=crop&w=1200&h=800&q=80"
+                        src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1920&h=1200&q=80"
                         alt="Storeys  Example Image">
                     </div>
                   </div>
